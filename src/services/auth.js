@@ -1,25 +1,10 @@
-const BASE_URL = 'http://localhost:7890';
+import { post, get } from './request';
+const AUTH_URL = 'http://localhost:7890/api/auth';
 
-export const signup = (username, password) => {
-  return fetch(`${BASE_URL}/api/auth/signup`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include',
-    body: JSON.stringify({ username, password })
-  })
-    .then(res => res.json());
-};
+export const signup = (username, password) => post(`${AUTH_URL}/signup`,
+  { username, password });
 
-export const login = (username, password) => {
-  return fetch(`${BASE_URL}/api/auth/signin`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    credentials: 'include',
-    body: JSON.stringify({ username, password })
-  })
-    .then(res => res.json());
-};
+export const login = (username, password) => post(`${AUTH_URL}/signin`,
+  { username, password });
+
+export const verifySession = () => get(`${AUTH_URL}/verify`);

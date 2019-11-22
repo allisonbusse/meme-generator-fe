@@ -1,0 +1,27 @@
+.CurrentMemeDisplay {
+ 
+  h2 {
+    position: absolute;
+    width: 100%;
+    font-size: 2.5em;
+    margin: 0;
+    color: white;
+    text-align: center;
+    -webkit-text-stroke:black 1px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    text-transform: uppercase;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+    border: solid 1px black;
+  }
+}

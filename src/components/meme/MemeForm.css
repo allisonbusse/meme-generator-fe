@@ -1,0 +1,9 @@
+.MemeForm {
+  form {
+    margin-bottom: 50px;
+  }
+  div {
+    width: 500px;
+    position: relative;
+  }
+}
